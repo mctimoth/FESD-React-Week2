@@ -1,13 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Instructions from './components/instructions.js';
+import NavBar from './components/navBar.js';
+import LoginForm from './components/loginForm.js';
+import MovieList from './components/movieList';
+import ReviewForm from './components/reviewForm.js'
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <div>
+    <Instructions />
+    <NavBar />
+    <LoginForm />
+    <MovieList />
+    <ReviewForm />
+  </div>,
   document.getElementById('root')
 );
 
