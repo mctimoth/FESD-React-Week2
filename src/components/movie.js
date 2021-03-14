@@ -10,7 +10,8 @@ export default class Movie extends React.Component {
             rating: 0,
             year: 0,
             poster: "",
-            reviews: []
+            reviews: [],
+            nextReviewId:1
         }
     }
 }

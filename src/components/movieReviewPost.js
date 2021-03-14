@@ -1,45 +1,43 @@
 import React from 'react';
-import ReplyButton from './reply-button';
-import LikeButton from './like-button';
-import MovieReviewPostReply from './movieReviewPostReply';
+import SubmitReviewButton from './submit-review-button';
 
 // let e = React.createElement;
 
 export default class MovieReviewPost extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            review: ""
+        };
+    }
+
     render() {
-        return (                    //This is the JSX method
+        return(
             <div className="card w-75">
-                <div className="card-header bg-primary text-white">
+                <div className="card-header bg-success text-white">
                     Username and Time
                 </div>
                 <div className="card-body">
-                    This is where our Post goes
+                    This Is Where Our Comment Goes
                 </div>
                 <div className="card-footer">
-                    <LikeButton />
-                    <ReplyButton />
-                    <MovieReviewPostReply />
-                    <MovieReviewPostReply />
-                    <MovieReviewPostReply />
+                    <span onClick={this.props.addReview}><SubmitReviewButton /></span>
                 </div>
             </div>
         );
-        // return e('div',              //this it the React.js method
+        // return e('div',
         //         {class: 'card w-75'},
         //     e('div',
         //         {class: 'card-header bg-success text-white'},
         //         'Username and Time'),
         //     e('div',
         //         {class:  'card-body'},
-        //         'Post Content Goes Here'),
+        //         'Comment Content Goes Here'),
         //     e('div',
         //         {class: 'card-footer'},
         //         e(LikeButton, {}, null),
         //         e('span', {}, ' '),  //A space between buttons
-        //         e(ReplyButton, {}, null),
-        //         e('br', {}, null),
-        //         e(Comment, {}, null),
-        //         e(Comment, {}, null)
+        //         e(ReplyButton, {}, null)
         //     )
         // );
     }

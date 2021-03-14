@@ -4,6 +4,9 @@ import React from "react";
 export default class reviewCard extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            reviews:[]
+        };
         this.handleClick = this.handleClick.bind(this);
     }
 
