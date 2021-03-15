@@ -1,11 +1,11 @@
 import React from "react";
+import MovieReviewCard from "./movieReviewCard";
 import ReviewForm from "./reviewForm";
 import ReviewsButton from "./reviews-button";
 
 export default class MovieCard extends React.Component {
     constructor(props) {
         super(props);
-        this.handleClick = this.handleClick.bind(this);
         this.state = {
             id: this.props.id,
             title: this.props.title,
@@ -17,6 +17,8 @@ export default class MovieCard extends React.Component {
             showReviews: false,
             selected: false
         }
+
+        this.handleClick = this.handleClick.bind(this);
         this.onSubmitForm = this.onSubmitForm.bind(this);
     }
 
@@ -44,6 +46,8 @@ export default class MovieCard extends React.Component {
     }
 
     render() {
+        let inAReview = false;
+        while (!inAReview) {
         return (
            <div style={{display: "inline-block", padding: "0px 50px"}}>
                 <h3>Title:  {this.props.title}</h3>
@@ -54,5 +58,8 @@ export default class MovieCard extends React.Component {
                 {this.state.showReviews && <ReviewForm onSubmitForm={this.onSubmitForm}/>}
             </div>
         );
+        }
+        inAReview = true; 
+        <MovieReviewCard />
     }
 }
