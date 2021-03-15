@@ -7,14 +7,15 @@ export default class MovieCard extends React.Component {
         super(props);
         this.handleClick = this.handleClick.bind(this);
         this.state = {
-            id: 6,
-            title: "",
-            synopsis: "",
+            id: this.props.id,
+            title: this.props.title,
+            content: this.props.content,
             rating: 0,
-            year: 0,
-            poster: "",
+            year: this.props.year,
+            poster: this.props.poster,
             reviews: this.props.reviews,
-            showReviews: false
+            showReviews: false,
+            selected: false
         }
         this.onSubmitForm = this.onSubmitForm.bind(this);
     }
@@ -22,8 +23,13 @@ export default class MovieCard extends React.Component {
 
     handleClick() {
         // console.log(`You clicked the ReviewsButton for ${this.props.title}`)
-        this.setState({showReviews: true});
+        this.setState({showReviews: true, selected: true});
+        this.props.onReviewsButtonClick(this.state.id);
+        console.log(this.state.id);
+        
+        // reviews.push()
     }
+
     renderReviews() {
         let reviews = [];
             this.state.showReviews && this.state.reviews.forEach((review) => {
@@ -38,7 +44,6 @@ export default class MovieCard extends React.Component {
     }
 
     render() {
-        console.log(this.state.showReviews);
         return (
            <div style={{display: "inline-block", padding: "0px 50px"}}>
                 <h3>Title:  {this.props.title}</h3>

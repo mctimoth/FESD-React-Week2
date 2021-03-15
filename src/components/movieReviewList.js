@@ -1,11 +1,19 @@
 import React from 'react';
-
-// let e = React.createElement;
+import MovieReviewCard from './movieReviewCard';
 
 export default class MovieReviewList extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+
+        };
+    }
     render() {
         return (                    //This is the JSX method
             <div className="card w-75">
+                <div>
+                    <MovieReviewCard />
+                </div>
                 <div className="card-header bg-primary text-white">
                     Username and Time
                 </div>
@@ -16,23 +24,5 @@ export default class MovieReviewList extends React.Component {
                 </div>
             </div>
         );
-        // return e('div',              //this it the React.js method
-        //         {class: 'card w-75'},
-        //     e('div',
-        //         {class: 'card-header bg-success text-white'},
-        //         'Username and Time'),
-        //     e('div',
-        //         {class:  'card-body'},
-        //         'Post Content Goes Here'),
-        //     e('div',
-        //         {class: 'card-footer'},
-        //         e(LikeButton, {}, null),
-        //         e('span', {}, ' '),  //A space between buttons
-        //         e(ReplyButton, {}, null),
-        //         e('br', {}, null),
-        //         e(Comment, {}, null),
-        //         e(Comment, {}, null)
-        //     )
-        // );
     }
 }
